@@ -13,4 +13,4 @@ def top_cosine_similarity(
     magnitude: np.ndarray = np.sqrt(np.einsum("ij, ij -> i", data, data))
     similarity: np.ndarray = np.dot(movie_row, data.T) / (magnitude[index] * magnitude)
     sort_indexes: np.ndarray = np.argsort(-similarity)
-    return sort_indexes[:top_n + 1]
+    return sort_indexes[: top_n + 1]
