@@ -5,4 +5,4 @@ install:
 	pip install -r requirements.txt
 
 start:
-	streamlit run app.py
+	streamlit run start.py
