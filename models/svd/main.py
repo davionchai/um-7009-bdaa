@@ -9,7 +9,7 @@ from models.svd.utils.matrixprocess import MatrixProcess
 
 def svd(
     k: int, movie_id: float, top_n: int, data: pd.DataFrame, movie_data: pd.DataFrame
-) -> Tuple[str, float, List[str]]:
+) -> Tuple[str, List[str]]:
     # SVD Matrix
     V: np.ndarray = MatrixProcess.get_svd(data=data)
     # Representative data

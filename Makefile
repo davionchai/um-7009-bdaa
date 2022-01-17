@@ -4,5 +4,9 @@ install-dev:
 install:
 	pip install -r requirements.txt
 
-start:
-	streamlit run start.py
+init: install
+	python start.py
+
+start: init
+	streamlit run app.py
+
