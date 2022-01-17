@@ -1,7 +1,7 @@
 import streamlit as st
 
 
-def page_home():
+def page_home(**kwargs):
     # ---- Header ----
     with st.container():
         st.title("A Movie Recommender Tutorial from some Data Science Students :wink:")
