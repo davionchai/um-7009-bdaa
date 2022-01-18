@@ -14,7 +14,13 @@ class Retriever:
         self.movie_name: str = self.movie_data[
             self.movie_data.movie_id == movie_id
         ].title.values[0]
-        return [
-            self.movie_data[self.movie_data.movie_id == id].title.values[0]
-            for id in (top_items_id + 1)[1:]
-        ]
+        retrieved_movie: List[str] = []
+        for id in (top_items_id + 1)[1:]:
+            try:
+                retrieved_movie.append(
+                    self.movie_data[self.movie_data.movie_id == id].title.values[0]
+                )
+            except Exception as error:
+                print(f"Missing movie id [{id}] has caused: [{error}]")
+                continue
+        return retrieved_movie
