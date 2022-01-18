@@ -17,7 +17,7 @@ def main():
     )
 
     data: MovieData = load_data()
-    print("Data loaded")
+    
     pages = {
         "Home": page_home,
         "Movie Recommender": page_svd,
@@ -42,8 +42,9 @@ def main():
 def load_data():
     """Ingest data"""
     print("Loading data")
-    return MovieData(data_dir=DATA_DIR)
-
+    data: MovieData = MovieData(data_dir=DATA_DIR)
+    print("Data loaded")
+    return data
 
 if __name__ == "__main__":
     main()
