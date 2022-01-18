@@ -1,4 +1,5 @@
 import streamlit as st
+import streamlit.components.v1 as components
 
 
 def page_home(**kwargs):
@@ -15,20 +16,20 @@ def page_home(**kwargs):
         st.write(
             "This is a working demo as part of the student project to put the understanding on the concept of Singular Value Decomposition (SVD) used in movie recommender system into action. Below are some of brief explanation on the concepts in preparing this recommender system. In this work, the dataset used is MovieLens 1M dataset."
         )
-        
+
         st.write("##")
         st.subheader("Instruction of use:")
         st.write(
-"""
-- On the top left of webpage, click on :arrow_forward:
+            """
+- On the top left of webpage, click on  :arrow_forward:
 - After clicking, navigation bar appears on screen.
 - Kindly select “Movie Recommender”.
 - On this page, you're required to pick a movie.
 - A list of recommended movies instantly appears on your screen
 - You may now enjoy watching one of the movies! :laughing:
 """
-        )     
-        
+        )
+
         st.write("##")
         st.subheader("Recommender System")
         st.write(
@@ -36,9 +37,11 @@ def page_home(**kwargs):
         )
         st.write("##")
         st.subheader("Singular Value Decomposition (SVD)")
-        st.write("SVD is a linear algebra method used as dimensionality reduction technique in machine learning. SVD is a factorization technique that decomposes a matrix M of form m*n into USVT where, ")
         st.write(
-"""
+            "SVD is a linear algebra method used as dimensionality reduction technique in machine learning. SVD is a factorization technique that decomposes a matrix M of form m*n into USVT where, "
+        )
+        st.write(
+            """
 - U = real or complex unitary matrix (m*m) 
 - ∑ = rectangular diagonal matrix(m*n) with non-negative real numbers (square root of non-negative eigen values of M in descending order) on the diagonal. 
 - VT= real or complex unitary matrix (n*n). 
@@ -48,13 +51,16 @@ def page_home(**kwargs):
   - Another rotation in outer space 
 """
         )
-        st.write("In the context of recommender system, SVD uses a matrix structure where each row represents a user while each column represents an item and elements of the matrix are the ratings given to items by the users.")
-        
+        st.write(
+            "In the context of recommender system, SVD uses a matrix structure where each row represents a user while each column represents an item and elements of the matrix are the ratings given to items by the users."
+        )
+
         st.write("##")
         st.subheader("Types of filtering")
         st.write(
             "In the context of movie recommender system with the use of MovieLens 1M Dataset, SVD is used as a collaborative filtering technique. There are few other types of filtering systems that could be implemented in a recommender system as shown as below:"
         )
+        st.image("./src/img/filtering.png")
         st.write("##")
 
     # ---- Materials & Reference ----
@@ -72,3 +78,7 @@ def page_home(**kwargs):
                 "[Back to top ^](#a-movie-recommender-tutorial-from-some-data-science-students)",
                 unsafe_allow_html=True,
             )
+    components.html(
+        f"<script>window.parent.document.querySelector('section.main').scrollTo(0, 0);</script>",
+        height=0,
+    )
