@@ -26,7 +26,7 @@ def page_svd(**kwargs):
                 similar_movies: List[str] = calculate_similar_movies(
                     data=data, movie_selected=movie_selected
                 )
-                st.write("Our robot think that you might like the following movies:")
+                st.write("Our robot thinks that you might like the following movies:")
                 for movie in similar_movies:
                     st.write("- ", movie)
 
