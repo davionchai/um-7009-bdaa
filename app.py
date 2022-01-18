@@ -17,7 +17,7 @@ def main():
     )
 
     data: MovieData = load_data()
-
+    print("Data loaded")
     pages = {
         "Home": page_home,
         "Movie Recommender": page_svd,
